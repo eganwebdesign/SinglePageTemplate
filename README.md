@@ -1,2 +1,2 @@
-# SinglePageTemplate.github.io
+# SinglePageTemplate
 Single Page Template
