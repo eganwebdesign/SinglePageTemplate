@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Single Page template</title>
+
+    <!-- Theme CSS MINIFIED -->
+    <link href="css/theme.css" rel="stylesheet">
+
+    <!-- Fonts Awesome -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+
+    <!-- Owl Carousel Assets -->
+    <link href="css/owlcarousel/owl.carousel.css" rel="stylesheet">
+    <link href="css/owlcarousel/owl.theme.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+
+
+<!-- MAP SCRIPT -->
+    <!-- 
+        You need to include this script on any page that has a Google Map.
+        When using Google Maps on your own site you MUST signup for your own API key at:
+            https://developers.google.com/maps/documentation/javascript/tutorial#api_key
+        After your sign up replace the key in the URL below or paste in the new script tag that Google provides.
+    -->
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDQT9_c_KcbrRFTb-lmO89efWzMFZ9DHrI"></script>
+    <script type="text/javascript">
+        // When the window has finished loading create our google map below
+        google.maps.event.addDomListener(window, 'load', init);
+    
+        function init() {
+            // Basic options for a simple Google Map
+            // For more options see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions
+            var mapOptions = {
+                // How zoomed in you want the map to start at (always required)
+                zoom: 11,
+                
+                scrollwheel: false,
+
+                // The latitude and longitude to center the map (always required)
+                center: new google.maps.LatLng(40.6700, -73.9400), // New York
+
+                // How you would like to style the map. 
+                // This is where you would paste any style found on Snazzy Maps.
+                styles: [{"featureType":"water","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":17}]},{"featureType":"landscape","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":20}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#000000"},{"lightness":17}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"color":"#000000"},{"lightness":29},{"weight":0.2}]},{"featureType":"road.arterial","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":18}]},{"featureType":"road.local","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":16}]},{"featureType":"poi","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":21}]},{"elementType":"labels.text.stroke","stylers":[{"visibility":"on"},{"color":"#000000"},{"lightness":16}]},{"elementType":"labels.text.fill","stylers":[{"saturation":36},{"color":"#000000"},{"lightness":40}]},{"elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":19}]},{"featureType":"administrative","elementType":"geometry.fill","stylers":[{"color":"#000000"},{"lightness":20}]},{"featureType":"administrative","elementType":"geometry.stroke","stylers":[{"color":"#000000"},{"lightness":17},{"weight":1.2}]}]
+            };
+
+            // Get the HTML DOM element that will contain your map 
+            // We are using a div with id="map" seen below in the <body>
+            var mapElement = document.getElementById('map');
+
+            // Create the Google Map using out element and options defined above
+            var map = new google.maps.Map(mapElement, mapOptions);
+
+             // Let's also add a marker while we're at it
+            var marker = new google.maps.Marker({
+                    position: new google.maps.LatLng(40.6700, -73.9400),
+                    map: map,
+                    title: 'Shutter'
+                });
+        }
+    </script>  
+    <!-- / MAP SCRIPT -->  
+
+</head>
+
+<body>
+
+    <!-- Header Carousel -->
+
+    <header>
+        <div class="container header backstretch-header">
+            <div class="row">
+                <div class="col-lg-12">
+                            <div class="logo"><p><img src="img/shutter-logo-header.png" height="170" width="150"></p></div>
+
+                            <div id="carousel" class="carousel-text">
+                                <div>
+                                    <h1>RANDOM QUOTE #1</h1>
+                                    <h3>LOREM IPSUM DOLOR SIT AMET, CONSECTETUR ADIPISICING ELIT ISTE VERITATIS QUI.</h3>
+                                    <h6>- Ansel Adams</h6>
+                                </div>
+                                <div>
+                                    <h1>RANDOM QUOTE #2</h1>
+                                    <h3>LOREM IPSUM DOLOR SIT AMET, CONSECTETUR ADIPISICING ELIT ISTE VERITATIS QUI.</h3>
+                                    <h6>- Ansel Adams</h6>
+                                </div>
+                                <div>
+                                    <h1>RANDOM QUOTE #3</h1>
+                                    <h3>LOREM IPSUM DOLOR SIT AMET, CONSECTETUR ADIPISICING ELIT ISTE VERITATIS QUI.</h3>
+                                    <h6>- Ansel Adams</h6>
+                                </div>                                
+                            </div> <!-- / carousel -->
+                            <div align="center" class="btn-header">
+                                <div class="btn btn-stroked">COME CLOSER</div>
+                            </div>
+                </div> <!-- /col -->
+
+                
+            </div> <!-- /row -->
+        </div> <!-- /contianer -->
+        
+    </header>
+
+<!-- nav-wrap -->
+<div class="container">
+    <div class="row">
+
+        <!-- Navigation -->
+    <nav class="navbar navbar-inverse" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            <a class="navbar-brand" href="#">
+                    <img alt="brand" src="img/shutter-logo.jpg" height="60" width="216" class="img-responsive">
+            </a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#portfolio">PORTFOLIO</a>
+                    </li>
+                    <li>
+                        <a href="#services">SERVICES</a>
+                    </li>
+                    <li>
+                        <a href="#signup">SIGN UP</a>
+                    </li> 
+                    <li>
+                        <a href="#sponsors">SPONSORS</a>
+                    </li>                                                           
+                    <li>
+                        <a href="#contact">CONTACT</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>  
+            
+    </div>  <!-- /nav-wrap row -->
+</div>  <!-- / nav wrap container -->
+  
+
+    <!-- Page Content -->
+    <div class="container ">
+        <!-- Portfolio Section -->
+        <div class="row portfolio" id="portfolio">
+        <!-- row 1 -->
+            <div class="col-md-3 col-sm-3 col-xs-6">
+                <a href="#">
+                    <span class="text">VIEW PHOTO <br/><i class="fa fa-2x fa-camera"></i></span>
+                    <img class="img-responsive img-hover" src="img/portfolio/22.jpg" alt="photo">
+                </a>
+            </div>        
+            <div class="col-md-3 col-sm-3 col-xs-6">
+                <a href="#">
+                    <span class="text">VIEW PHOTO <br/><i class="fa fa-2x fa-camera"></i></span>
+                    <img class="img-responsive img-hover" src="img/portfolio/23.jpg" alt="photo">
+                </a>
+            </div> 
+            <div class="col-md-3 col-sm-3 col-xs-6">
+                <a href="#">
+                    <span class="text">VIEW PHOTO <br/><i class="fa fa-2x fa-camera"></i></span>
+                    <img class="img-responsive img-hover" src="img/portfolio/24.jpg" alt="photo">
+                </a>
+            </div> 
+            <div class="col-md-3 col-sm-3 col-xs-6">
+                <a href="#">
+                    <span class="text">VIEW PHOTO <br/><i class="fa fa-2x fa-camera"></i></span>
+                    <img class="img-responsive img-hover" src="img/portfolio/25.jpg" alt="photo">
+                </a>
+            </div>  
+            <!-- row 2 -->
+            <div class="col-md-3 col-sm-3 col-xs-6">
+                <a href="#">
+                    <span class="text">VIEW PHOTO <br/><i class="fa fa-2x fa-camera"></i></span>
+                    <img class="img-responsive img-hover" src="img/portfolio/26.jpg" alt="photo">
+                </a>
+            </div>        
+            <div class="col-md-3 col-sm-3 col-xs-6">
+                <a href="#">
+                    <span class="text">VIEW PHOTO <br/><i class="fa fa-2x fa-camera"></i></span>
+                    <img class="img-responsive img-hover" src="img/portfolio/27.jpg" alt="photo">
+                </a>
+            </div> 
+            <div class="col-md-3 col-sm-3 col-xs-6">
+                <a href="#">
+                    <span class="text">VIEW PHOTO <br/><i class="fa fa-2x fa-camera"></i></span>
+                    <img class="img-responsive img-hover" src="img/portfolio/28.jpg" alt="photo">
+                </a>
+            </div> 
+            <div class="col-md-3 col-sm-3 col-xs-6">
+                <a href="#">
+                    <span class="text">VIEW PHOTO <br/><i class="fa fa-2x fa-camera"></i></span>
+                    <img class="img-responsive img-hover" src="img/portfolio/29.jpg" alt="photo">
+                </a>
+            </div>  
+        <!-- row 3 -->
+            <div class="col-md-3 col-sm-3 col-xs-6">
+                <a href="#">
+                    <span class="text">VIEW PHOTO <br/><i class="fa fa-2x fa-camera"></i></span>
+                    <img class="img-responsive img-hover" src="img/portfolio/30.jpg" alt="photo">
+                </a>
+            </div>        
+            <div class="col-md-3 col-sm-3 col-xs-6">
+                <a href="#">
+                    <span class="text">VIEW PHOTO <br/><i class="fa fa-2x fa-camera"></i></span>
+                    <img class="img-responsive img-hover" src="img/portfolio/31.jpg" alt="photo">
+                </a>
+            </div> 
+            <div class="col-md-3 col-sm-3 col-xs-6">
+                <a href="#">
+                    <span class="text">VIEW PHOTO <br/><i class="fa fa-2x fa-camera"></i></span>
+                    <img class="img-responsive img-hover" src="img/portfolio/32.jpg" alt="photo">
+                </a>
+            </div> 
+            <div class="col-md-3 col-sm-3 col-xs-6">
+                <a href="#">
+                    <span class="text">VIEW PHOTO <br/><i class="fa fa-2x fa-camera"></i></span>
+                    <img class="img-responsive img-hover" src="img/portfolio/33.jpg" alt="photo">
+                </a>
+            </div>  
+                                   
+        </div>
+        <!-- /.row -->
+
+        <div class="row portfolio">
+            <div class="col-lg-12 load-more">
+                <div align="center">
+                    <div class="btn btn-stroked">LOAD MORE</div>
+                </div>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <!-- Our Services Section -->
+        <div class="row services" id="services">
+            <div class="col-lg-12 text-center">
+                <h2 >SERVICES</h2>
+            </div>
+
+
+            <div class="col-sm-3 col-md-3 text-center">
+                <div class="thumbnail">
+                    <img class="img-responsive" src="img/icon-services-layout.png" height="145" width="145" alt="icon">
+                    <div class="caption">
+                        <h4>ONE PAGE LAYOUT</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In feugiat pulvinar magna.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3 col-md-3 text-center">
+                <div class="thumbnail">
+                    <img class="img-responsive" src="img/icon-services-flat.png" height="145" width="145" alt="icon">
+                    <div class="caption">
+                        <h4>FLAT DESIGN</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In feugiat pulvinar magna.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3 col-md-3 text-center">
+                <div class="thumbnail">
+                    <img class="img-responsive" src="img/icon-services-portfolio.png" height="145" width="145" alt="icon">
+                    <div class="caption">
+                        <h4>PHOTO PORTFOLIO</h4>
+
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In feugiat pulvinar magna.</p>
+                    </div>
+                </div>
+            </div>                       
+
+            <div class="col-sm-3 col-md-3 text-center">
+                <div class="thumbnail">
+                    <img class="img-responsive" src="img/icon-services-edit.png" height="145" width="145" alt="icon">
+                    <div class="caption">
+                        <h4>EASY TO EXIT</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In feugiat pulvinar magna.</p>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        <!-- /.row /services -->
+
+
+        <!-- Sign-up -->
+        <div class="row sign-up backstretch-sign-up" id="signup">
+            <div class="col-lg-12 text-center">
+                <div class="sign-up-head">ARE YOU INTERESTED? <br> SIGN UP NOW</div>
+            </div>
+            <div class="col-lg-12 text-center">
+                <form class="form-inline">
+                  <div class="form-group">
+                    <label class="sr-only" for="exampleInputEmail2">First Name</label>
+                    <input type="firstname" class="form-control" id="firstname" placeholder="First Name">
+                  </div>
+                  <div class="form-group">
+                    <label class="sr-only" for="exampleInputEmail2">Last Name</label>
+                    <input type="lastname" class="form-control" id="lastname" placeholder="Last Name">
+                  </div>
+
+                  <button type="submit" class="btn btn-custom">Sign Up</button>
+                </form>
+            </div>            
+
+        </div>
+        <!-- /.row /sign-up --> 
+
+
+  <!-- XXXXXX Section -->
+        <div class="row sponsors" id="sponsors">
+            <div class="col-lg-12 text-center">
+                <h2 >OUR SPONSORS</h2>
+            </div>
+
+
+            <div class="col-xs-4 col-sm-4 col-md-2">
+                <div class="thumbnail">
+                <a href="#">
+                    <span class="logo-sponsor"><img src="img/sponsors/sponsor-canon.png"  class="img-responsive"></span>
+                </a>
+                </div>
+            </div>
+
+
+            <div class="col-xs-4 col-sm-4 col-md-2">
+                <div class="thumbnail">
+                <a href="#">
+                    <span class="logo-sponsor"><img src="img/sponsors/sponsor-sony.png"  class="img-responsive"></span>
+                </a>
+                </div>
+            </div>
+
+            <div class="col-xs-4 col-sm-4 col-md-2">
+                <div class="thumbnail">
+                <a href="#">
+                    <span class="logo-sponsor"><img src="img/sponsors/sponsor-nikon.png"  class="img-responsive"></span>
+                </a>
+                </div>
+            </div>
+
+            <div class="col-xs-4 col-sm-4 col-md-2">
+                <div class="thumbnail">
+                <a href="#">
+                    <span class="logo-sponsor"><img src="img/sponsors/sponsor-pentax.png"  class="img-responsive"></span>
+                </a>
+                </div>
+            </div>
+
+
+            <div class="col-xs-4 col-sm-4 col-md-2">
+                <div class="thumbnail">
+                <a href="#">
+                    <span class="logo-sponsor"><img src="img/sponsors/sponsor-kodak.png"  class="img-responsive"></span>
+                </a>
+                </div>
+            </div>
+
+            <div class="col-xs-4 col-sm-4 col-md-2">
+                <div class="thumbnail">
+                <a href="#">
+                    <span class="logo-sponsor"><img src="img/sponsors/sponsor-nokia.png"  class="img-responsive"></span>
+                </a>
+                </div>
+            </div>                  
+
+
+        </div>
+        <!-- /.row /XXXXXX -->
+
+
+        <!-- Contact Section -->
+        <div class="row contact" id="contact">
+
+            <div class="col-sm-5 col-md-5 col-md-offset-1 col-sm-offset-1">
+
+                <h5>WE WANT TO HEAR FROM YOU</h5>
+
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi beatae, tenetur? Dignissimos deleniti tempore dolorum magnam vitae cum enim quasi repellendus, ipsa in placeat cumque aliquid, consectetur sit, omnis qui.</p>
+
+                <p>Consectetur adipisicing elit. Quasi beatae, tenetur? Dignissimos deleniti tempore dolorum magnam vitae cum enim quasi repellendus, ipsa in placeat cumque aliquid, consectetur sit, omnis qui.</p>
+
+                <div class="media">
+                  <div class="media-left">
+                    <i class="fa fa-2x fa-map-marker"></i>
+                  </div>
+                  <div class="media-body">
+                    <p>Ex libero deserunt expedita quo recusandae, corrupti. <br/>Brooklyn, New York, USA</p>
+                  </div>
+                </div>
+                <div class="media">
+                  <div class="media-left">
+                    <i class="fa fa-2x fa-mobile"></i>
+                  </div>
+                  <div class="media-body">
+                    <p>Tell: +123 456789 12 <br/>Fax: +123 456789 12</p>
+                  </div>
+                </div>
+                <div class="media">
+                  <div class="media-left">
+                    <i class="fa fa-lg fa-envelope-o"></i>
+                  </div>
+                  <div class="media-body">
+                    <p><a href="#">info@email.com</a></p>
+                  </div>
+                </div>                                
+                    
+            </div>                       
+
+            <div class="col-sm-4 col-md-4 col-md-offset-1 col-sm-offset-1">
+
+                    <div class="well">
+                        <h5>Contact</h5>
+
+                <form class="form">
+                  <div class="form-group">
+                    <label class="sr-only" for="contact">Your Name</label>
+                    <input type="yourname" class="form-control" id="yourname" placeholder="Your Name">
+                  </div>
+                  <div class="form-group">
+                    <label class="sr-only" for="contact">Your Email</label>
+                    <input type="youremail" class="form-control" id="youremail" placeholder="Your Email">
+                  </div>
+                  <div class="form-group">
+                    <label class="sr-only" for="contact">Message</label>
+                    <input type="message" class="form-control" id="message" placeholder="Message">
+                  </div>                  
+                  <button type="submit" class="btn btn-custom-header">Send</button>
+                </form>
+
+
+                    </div>
+            </div>
+
+
+
+        </div>
+        <!-- /.row /contact-->
+        <!-- google map -->
+
+        <div class="row"><div id="map" style= "border-top:1px solid #555; border-bottom:1px solid #555"></div></div>
+            
+
+        
+
+        <!-- Footer -->
+            <div class="row footer">
+                <div class="col-sm-6 col-md-6 col-lg-6">
+                    <p>&copy; 2015 Company</p>
+                </div>
+                <div class="col-sm-6 col-md-6 col-lg-6">
+                    <a href="https://twitter.com/" class="btn" target="_blank"><i class="fa fa-twitter-square fa-2x"></i></a>
+                    <a href="https://twitter.com/" class="btn" target="_blank"><i class="fa fa-facebook-square fa-2x"></i></a>
+                    <a href="https://twitter.com/" class="btn" target="_blank"><i class="fa fa-youtube-square fa-2x"></i></a>                    
+
+                </div>                
+            </div>
+        <!-- / Footer -->            
+
+    </div>
+    <!-- /.container -->
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- backstretch -->
+    <script src="js/jquery.backstretch.min.js"></script>
+
+     <!-- owl carousel -->
+    <script src="js/owl.carousel.min.js"></script>
+
+    <script src="js/scripts.js"></script>
+
+</body>
+
+</html>
